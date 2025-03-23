@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 250px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .video-box {
+            width: 20%;
+            padding: 10px;
+        }
+        .video-box iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px;
+        }
+        .middle-video {
+            width: 40%;
+        }
+        .mute-button {
+            background: #4a22ff;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .mute-button:hover {
+            background: #e64a19;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 23%;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                flex-direction: column;
+            }
+            .video-box, .middle-video {
+                width: 100%;
+            }
+            .image-container img {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Download Your Certificate</h2>
+        <input type="text" id="nameInput" placeholder="Enter Your HT.NO CAPTIAL">
+        <button onclick="getCertificate()">Get Certificate</button>
+        <button class="mute-button" onclick="toggleMute()">Mute/Unmute Videos</button>
+        <p id="message"></p>
+    </div>
+
+    <div class="video-container">
+        <!-- Left Video -->
+        <div class="video-box">
+            <iframe class="video" src="https://www.youtube.com/embed/Re89SV-jGwQ?autoplay=1&mute=1&loop=1&playlist=Re89SV-jGwQ&controls=0" allow="autoplay"></iframe>
+        </div>
+        <!-- Middle Video (Bigger) -->
+        <div class="video-box middle-video">
+            <iframe class="video" src="https://www.youtube.com/embed/cK88Ou-esEo?autoplay=1&mute=1&loop=1&playlist=cK88Ou-esEo&controls=0" allow="autoplay"></iframe>
+        </div>
+        <!-- Right Video -->
+        <div class="video-box">
+            <iframe class="video" src="https://www.youtube.com/embed/ngSusu17A_k?autoplay=1&mute=1&loop=1&playlist=ngSusu17A_k&controls=0" allow="autoplay"></iframe>
+        </div>
+    </div>
+<h1>EVENTS</h1>
+    <div class="image-container">
+        <img src="pic/today stg.jpg" alt="Event Image 1">
+        <img src="D:\dataverse\certificates\DATAVERSE\pic\stu.jpg" alt="Event Image 2">
+        <img src="D:\dataverse\certificates\DATAVERSE\pic\aud.jpg" alt="Event Image 3">
+        <img src="D:\dataverse\certificates\DATAVERSE\pic\audstg.jpg" alt="Event Image 4">
+    </div>
+
+    <script>
+        function toggleMute() {
+            let videos = document.querySelectorAll(".video");
+            videos.forEach(video => {
+                let src = video.src;
+                if (src.includes("mute=1")) {
+                    video.src = src.replace("mute=1", "mute=0");
+                } else {
+                    video.src = src.replace("mute=0", "mute=1");
+                }
+            });
+        }
+    
+           
+        const certificates = {
+            "22WJ8A0537": "https://drive.google.com/drive/folders/1dhUk79l-v_5JGxHNX-xOD1rtmN9HSlU8?usp=sharing",
+            "22WJ8A0546": "https://drive.google.com/drive/folders/1c6eo1UU9FBWC3K8ME3ZpJnlcj_XCMZ5Y?usp=sharing",
+            "22WJ8A6721": "https://drive.google.com/drive/folders/1naApG_mfPnxyREFk81s_RNh9fkljMlVQ?usp=drive_link",
+            "22WJ8A0570": "https://drive.google.com/drive/folders/1_3FUacEQw0kX9fhQRY1vHCKzoxPe0A5m?usp=drive_link",
+            "22WJ8A0541": "https://drive.google.com/drive/folders/1X-a38qzRoduGI8wxoi98jqUZnoTkF1j5?usp=drive_link",
+            "22WJ8A0575": "https://drive.google.com/drive/folders/1_s_5A5VtaT7yxNOg05oJittkj3WYjZkt?usp=drive_link",
+            "22WJ8A05B8": "https://drive.google.com/drive/folders/1Lc40gb-VrcgQ2GEkj51onrDpD45eRYZm?usp=drive_link",
+            "22WJ8A05C1": "https://drive.google.com/drive/folders/1c3Qduyr7q5xAcCyMjaDZRp_OnYMcgrCi?usp=drive_link",
+            "22WJ8A05D8": "https://drive.google.com/drive/folders/1NkOfNtw0tKfEG_YMkkcAeHN_hw3kMO03?usp=drive_link",
+            "22WJ8A05C0": "https://drive.google.com/drive/folders/1yTM-4gTLAWx15aAYN7OChFQzIs-FVJ7b?usp=drive_link",
+            "22WJ8A05E3": "https://drive.google.com/drive/folders/1REttyXlQyOXRJ5TdgflDuvWKnNx2QwCP?usp=drive_link",
+            "22WJ8A05F2": "https://drive.google.com/drive/folders/195PaTjHnj7a_ILidnokkq9-DVdu7SRAA?usp=drive_link",
+            "22WJ8A05G1": "https://drive.google.com/drive/folders/1G5VUfrm2TFJP8nJf4Xy0IkWSfrLMoJs2?usp=drive_link",
+            "22WJ8A05H0": "https://drive.google.com/drive/folders/1LBDQk5VjITcgPSbjMsfLTs-TzxofaepD?usp=drive_link",
+            "22WJ8A05J0": "https://drive.google.com/drive/folders/1Ls4UeTYoSYXeuLQg-7Yu49PsISYaATWB?usp=drive_link",
+            "22WJ8A05Q3": "https://drive.google.com/drive/folders/1wjLXG_iKwARX6ww5FjUB-z4ZaVxB30pM?usp=drive_link",
+            "22WJ8A05U3": "https://drive.google.com/drive/folders/1rg4E2xsVPfN9YOiah941A9PnAZ3ZGQh9?usp=drive_link",
+            "22WJ8A05M7": "https://drive.google.com/drive/folders/1B82_Twwr4-BV4WD0esbHcmfOhwFF79rX?usp=drive_link",
+            "22WJ8A05N7": "https://drive.google.com/drive/folders/1TRIDRKJOzm-xUqHKCfodEGHcnkoVOeLv?usp=drive_link",
+            "22WJ8A05R3": "https://drive.google.com/drive/folders/1BVHx830Pex7HQC3uFXBvdNBIkzvIOsfa?usp=drive_link",
+            "22WJ8A05AD": "https://drive.google.com/drive/folders/1tB4rPMV05hTgA76qceJpAxkw0EKDyr-U?usp=drive_link",
+            "22WJ8A05Z3": "https://drive.google.com/drive/folders/1Ijhjn0-uzfhDszUoF0X8xsMMErQ6yfLi?usp=drive_link",
+            "22WJ8A05Y8": "https://drive.google.com/drive/folders/126lFC58Ml7zxkpx1UiUwyiSQWgEc1uLR?usp=drive_link",
+            "22WJ8A05X9": "https://drive.google.com/drive/folders/1tshneXJb65vPa3Bi2w2_OgFQl3VRZ-00?usp=drive_link",
+            "22WJ8A05AA": "https://drive.google.com/drive/folders/16sXlQbaMMBJWVBMnkspKolbJAnbBwZWK?usp=drive_link",
+            "22WJ8A05CD": "https://drive.google.com/drive/folders/1YKgIqlANXy2GkrViG1IyXo8HLmzDsodi?usp=drive_link",
+            "22WJ8A05BK": "https://drive.google.com/drive/folders/1IA1o3FOyfvVVhrfoUtcLzTvNC-g29YmD?usp=drive_link",
+            "22WJ8A05DW": "https://drive.google.com/drive/folders/1ssXhZGlAbAZ8QJ9LkSDVXoXE5af22Ckc?usp=drive_link",
+            "22WJ8A05DD": "https://drive.google.com/drive/folders/1Td64Zfra21gsNvo7P3ywwHg9uJDGMlcn?usp=drive_link",
+            "22WJ8A05CB": "https://drive.google.com/drive/folders/1o5Cikj559TuIS3UnY5ZIhkD1Yvn7-yq6?usp=drive_link",
+            "22WJ8A05DV": "https://drive.google.com/drive/folders/19YATlL1Oawew_GcJmwD4nWML8XN3cdLq?usp=drive_link",
+            "22WJ8A05BR": "https://drive.google.com/drive/folders/1hfwwblLpQhwjRu7Cx_MTDz7F6WYYF3dW?usp=drive_link",
+            "22WJ8A05BT": "https://drive.google.com/drive/folders/1OEWnSrbbWLkaGiDaBDvU5OdVzMMwZzcm?usp=drive_link",
+            "22WJ8A05FN": "https://drive.google.com/drive/folders/1Cmzy59gIw6DuaBZCWWQgZVWI53fPKRkh?usp=drive_link",
+            "22WJ8A05EW": "https://drive.google.com/drive/folders/1P7VmlvTd6vtBB46IkCj2qJuihDIKL5bY?usp=drive_link",
+            "22WJ8A05FX": "https://drive.google.com/drive/folders/1HJTssXNI2C9wgqqF2GAT-JD_6dqADnmH?usp=drive_link",
+            "22WJ8A05FP": "https://drive.google.com/drive/folders/1eceGkWfT2v-KFEEPemVbKCt5GLVLmupa?usp=drive_link",
+            "22WJ8A05FG": "https://drive.google.com/drive/folders/1y5xcdm8sxJi4rvg5PiUdbDYPMQRngxba?usp=drive_link",
+            "22WJ8A05FM": "https://drive.google.com/drive/folders/1BmUzALeD1amOX4uO-Qmy_Aui2Vri3ChJ?usp=drive_link",
+            "22WJ8A05KA": "https://drive.google.com/drive/folders/1OCGS9DeJ0VdX7JGOjEUL-I-qfKszw_Xp?usp=drive_link",
+            "22WJ8A05KF": "https://drive.google.com/drive/folders/1Stj0FpxZnOs1gvJUn9N0Z9rPT0qt9vL0?usp=drive_link",
+            "22WJ8A05KT": "https://drive.google.com/drive/folders/1wRjVuD4tZyEflWUILyXi6f4sgilqDdQ3?usp=drive_link",
+            "22WJ8A05KP": "https://drive.google.com/drive/folders/12opmjdDXDEndPkG_5iK4IkQR0uT15JG7?usp=drive_link",
+            "22WJ8A05LE": "https://drive.google.com/drive/folders/1hyiVu1aeWvlJKMZG0qyXoCex7wSmMpe1?usp=drive_link",
+            "22WJ8A05ME": "https://drive.google.com/drive/folders/1dKCYqwqd4PGj82z6YIzRAGf3RNr98wSh?usp=drive_link",
+            "22WJ8A05ML": "https://drive.google.com/drive/folders/1vE0ydylcNNWQgeAW7iXwJZUYS7rAu6lr?usp=drive_link",
+            "22WJ8A05MQ": "https://drive.google.com/drive/folders/19jUrVOu3XjdaCjJ6HHrvIf0XV71MUcjS?usp=drive_link",
+            "22WJ8A05NM": "https://drive.google.com/drive/folders/1BVpH6WW7l_LoRIwKoB2N7zCOyE0SSjnU?usp=drive_link",
+            "22WJ8A05NV": "https://drive.google.com/drive/folders/1Xy6Zn1GnbJUn7Ejs0Yvqdni7-LnDCdg-?usp=drive_link",
+            "22WJ8A05PM": "https://drive.google.com/drive/folders/110IwigypMONofDk0iz-nfnI5FstHyttC?usp=drive_link",
+            "22WJ8A05PT": "https://drive.google.com/drive/folders/1PPQNQF4T8H0rhIlFhrF_vWfiLsUeTr-x?usp=drive_link",
+            "22WJ8A05QN": "https://drive.google.com/drive/folders/1LEvM6QOkNgvpRRb0-PJI6vZfYS-hiDxC?usp=drive_link",
+            "22WJ8A05RC": "https://drive.google.com/drive/folders/1m5vNEPGblCOoJcahtKtjGVSeONPop7Nn?usp=drive_link",
+            "22WJ8A05RF": "https://drive.google.com/drive/folders/1t3u8clirkTFa_wdLrLplFegWj4D4otgR?usp=drive_link",
+            "22WJ8A05PV": "https://drive.google.com/drive/folders/1unVHKgKFxO_eP9Y28ju11uBx0Is_0Bdj?usp=drive_link",
+            "22WJ8A05TM": "https://drive.google.com/drive/folders/1YjW7JIE_Oeer313bVSpUKu_xHHDipj9L?usp=drive_link",
+            "22WJ8A05TV": "https://drive.google.com/drive/folders/15ToXc0rXAu7b6VGShk2Sxilg6jRbTeNL?usp=drive_link",
+            "22WJ8A05UE": "https://drive.google.com/drive/folders/1MqrgFFVqdmb9LMColfBF8h0Q2BhY_i2Q?usp=drive_link",
+            "22WJ8A05UN": "https://drive.google.com/drive/folders/1m1bvDPJCqGH9FVMBIte2vq7YSd2JYFRP?usp=drive_link",
+            "22WJ8A05UQ": "https://drive.google.com/drive/folders/1cncyPonJ-dP_jS9SPL7IIfq_95Anb0ZO?usp=drive_link",
+            "22WJ8A6627": "https://drive.google.com/drive/folders/1PK0o7RAGNfALZ4AnINzpp6Onakx9o6DJ?usp=drive_link",
+            "22WJ8A6614": "https://drive.google.com/drive/folders/1SISSmUbII-Uco-DS0o99VUHlVa3fEBRW?usp=drive_link",
+            "22WJ8A6642": "https://drive.google.com/drive/folders/1iPUl_4rG9YgdgQAyeSnJwlSMSoH3jA49?usp=drive_link",
+            "22WJ8A6699": "https://drive.google.com/drive/folders/1baYYhfTngRcaOP2aHI0ZaAXhI-LL3Eto?usp=drive_link",
+            "22WJ8A6688": "https://drive.google.com/drive/folders/1SSFQ7DzaQFNQxfnvuf_3qvAIgNsyHhbf?usp=drive_link",
+            "22WJ8A66A0": "https://drive.google.com/drive/folders/1TQ_lXXfI1j1VDtkKPsVHJYob_Ld_HRNR?usp=drive_link",
+            "22WJ8A1263": "https://drive.google.com/drive/folders/13rCB3vCgyps1Pc-o-Z4357pA9NiV1wuV?usp=drive_link",
+            "22WJ8A66H0": "https://drive.google.com/drive/folders/1rQk5wjH1o12fpuoPRC5JSt4xSxgIpT7n?usp=drive_link",
+            "22WJ8A6765": "https://drive.google.com/drive/folders/1OozN4PgVFEhLWTpAkECHLHqCTlfMW4XS?usp=drive_link",
+            "22WJ8A05K5": "https://drive.google.com/drive/folders/1o73Pv_-p6tex7e_OmLhQQsG7Ltgg8guu?usp=drive_link"
+        };
+
+        function getCertificate() {
+            let name = document.getElementById("nameInput").value.trim();
+            if (certificates[name]) {
+                document.getElementById("message").innerHTML = 
+                    `<a href="${certificates[name]}" download>Click here to download your certificate</a>`;
+            } else {
+                document.getElementById("message").innerHTML = "Certificate not found. Please check your name.";
+            }
+        }
+    </script>
+
+
+<div class="team-container">
+    <h2>Meet Our Core Team</h2>
+    <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <img src="dataverse core team/IMG_6196.jpg" alt="Member 1">
+            <h3>Ashwitha Rao</h3>
+            <p>President of the club DATAVERSE.</p>
+            <p>Passionate about Data data analytics using python.</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <img src="D:\dataverse\certificates\DATAVERSE\dataverse core team\IMG_3197.jpg" alt="Member 2">
+            <h3>Sriman Rao</h3>
+            <p>Vice president of the club DATAVERSE.</p>
+            <p>Focuses on Club activities.</p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-member">
+            <img src="D:\dataverse\certificates\DATAVERSE\dataverse core team\1000021617.jpg" alt="Member 3">
+            <h3>sharanya</h3>
+            <p>connective corporative co-ordinator of the club DATAVERSE.</p>
+            
+        </div>
+        <!-- Team Member 4 -->
+        <div class="team-member">
+            <img src="D:\dataverse\certificates\DATAVERSE\dataverse core team\IMG_3105.jpg" alt="Member 4">
+            <h3>Anusha</h3>
+            <p>Treasurer of the club DATAVERSE</p>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="team-member">
+            <img src="D:\dataverse\certificates\DATAVERSE\dataverse core team\IMG_3579~2.jpg" alt="Member 5">
+            <h3>Bhanu</h3>
+            <p>connective corporative co-ordinator of the club DATAVERSE.</p>
+            
+        </div>
+
+        <!-- Team Member 6 -->
+        <div class="team-member">
+            <img src="D:\dataverse\certificates\DATAVERSE\dataverse core team\IMG_20241105_101012.jpg" alt="Member 6">
+            <h3>Sindhu</h3>
+            <p>secretray of the club DATAVERSE.</p>
+            
+        </div>
+        <!-- Team Member 7 -->
+        <div class="team-member">
+            <img src="D:\dataverse\certificates\DATAVERSE\dataverse core team\23dea54a-2f33-43d2-8621-79b696efe235.jpg" alt="Member 7">
+            <h3>Rishitha</h3>
+            <p>secretray of the club DATAVERSE.</p>
+            
+        </div>
+
+        <!-- Team Member 8 -->
+        <div class="team-member">
+            <img src="dataverse core team/8bcbb602-2483-4676-b06f-ed7e42f755a6.jpg" alt="Member 8">
+            <h3>Varun</h3>
+            <p>Treasurer of the club DATAVERSE.</p>
+            
+        </div>
+
+        <!-- Team Member 9 -->
+        <div class="team-member">
+            <img src="D:\dataverse\certificates\DATAVERSE\dataverse core team\IMG-20241104-WA0025.jpg" alt="Member 9">
+            <h3>yehasri</h3>
+            <p>Treasurer of the club DATAVERSE.</p>
+            
+        </div>
+        <!-- Team Member 10 -->
+        <div class="team-member">
+            <img src="D:\dataverse\certificates\DATAVERSE\dataverse core team\IMG-20241107-WA0062.jpg" alt="Member 10">
+            <h3>&copy; Dhanush Chanda</h3>
+            <p><b>TECHNICAL HEAD OF THE CLUB DATAVERSE.</b></p>
+            <p>Passionate about AI and cloud computing,Cybersecurity expertise in Network Administration.</p>
+        </div>
+
+        
+
+
+
+    </div>
+</div>
+
+<style>
+    .team-container {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .team-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .team-member {
+        width: 200px;
+        text-align: center;
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    .team-member img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .team-member h3 {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+    .team-member p {
+        font-size: 14px;
+        color: #666;
+        margin: 2px 0;
+    }
+    @media (max-width: 768px) {
+        .team-grid {
+            flex-direction: column;
+            align-items: center;
+        }
+        .team-member {
+            width: 90%;
+        }
+    }
+</style>
+
+<!-- <style>
+    .special-thanks {
+        text-align: center;
+        margin-top: 50px;
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .thanks-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .thanks-card {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        text-align: center;
+    }
+    .thanks-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="special-thanks">
+    <h2>Special Thanks</h2>
+    <div class="thanks-container">
+        <div class="thanks-card">
+            <img src="https://drive.google.com/uc?export=view&id=IMAGE_ID_1" alt="Person 1">
+            <h3>Person 1</h3>
+            <p>Thank you for your valuable contributions and support.</p>
+        </div>
+        <div class="thanks-card">
+            <img src="https://drive.google.com/uc?export=view&id=IMAGE_ID_2" alt="Person 2">
+            <h3>Person 2</h3>
+            <p>Your guidance and encouragement helped make this event successful.</p>
+        </div>
+        <div class="thanks-card">
+            <img src="https://drive.google.com/uc?export=view&id=IMAGE_ID_3" alt="Person 3">
+            <h3>Person 3</h3>
+            <p>We appreciate your hard work and dedication to this event.</p>
+        </div>
+    </div>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
